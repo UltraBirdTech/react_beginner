@@ -14,7 +14,9 @@
         React.DOM.h1(
           {
             id: "my-heading",
-          }, "Hello world!"
+          },
+          React.DOM.span(null, "Hello"),
+          " world!"
         ),
         document.getElementById("app")
       );
