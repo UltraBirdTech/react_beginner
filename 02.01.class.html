@@ -3,3 +3,8 @@ var Component = React.createClass({
     return React.DOM.span(null, "カスタムコンポーネント");
   }
 });
+
+ReactDOM.render(
+  React.createElement(Component),
+  document.getElementBy("app")
+);
