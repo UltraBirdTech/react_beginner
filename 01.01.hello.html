@@ -15,7 +15,10 @@
           {
             id: "my-heading",
           },
-          React.DOM.span(null, "Hello"),
+          React.DOM.span(null,
+            React.DOM.em(null, "Hell"),
+            "o"
+          ),
           " world!"
         ),
         document.getElementById("app")
