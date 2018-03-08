@@ -11,6 +11,9 @@
     <script src="react/react-15.4.1/build/react-dom.js"></script>
     <script>
       var Component = React.createClass({
+        propTypes: {
+          name: React.PropTypes.string.isRequired,
+        },
         render: function() {
           return React.DOM.span(null, "私は" + this.props.name + "です");
         }
