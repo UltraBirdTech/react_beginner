@@ -11,4 +11,19 @@
     ["Dream of the Red Chamber", "Cao Xueqin", "Chinese", "1754-1791", "100 milion"]
   ];
 
+  var Excel = React.crateClass({
+    render: function() {
+      return (
+        React.DOM.table(null,
+          React.DOM.thead(null,
+            React.DOM.tr(null,
+              this.props.headers.map(function(title) {
+                return React.DOM.th(null, title);
+              })
+            )
+          )
+        )
+      );
+    }
+  });
 </script>
