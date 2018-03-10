@@ -1,29 +1,42 @@
-<script>
-  var headers = [
-    "タイトル", "著者", "言語", "出版年", "売り上げ部数"
-  ];
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+    </div>
+    <script src="react/react-15.4.1/build/react.js"></script>
+    <script src="react/react-15.4.1/build/react-dom.js"></script>
+    <script>
+      var headers = [
+        "タイトル", "著者", "言語", "出版年", "売り上げ部数"
+      ];
 
-  var data = [
-    ["The Load of the Rings", "J. R. R. Tolkien", "English", "1954-1955", "150 milion"],
-    ["Le Petit Prince (The Little Prince)", "Antoine de Saint-exupery", "French", "1943", "140 milion"],
-    ["Harry Potter and the Philosopher's Stone", "J. K. Rowling", "English", "1997", "107 milion"],
-    ["And Then There Were None", "Agatha Christie", "English", "1939", "100 milion"],
-    ["Dream of the Red Chamber", "Cao Xueqin", "Chinese", "1754-1791", "100 milion"]
-  ];
+      var data = [
+        ["The Load of the Rings", "J. R. R. Tolkien", "English", "1954-1955", "150 milion"],
+        ["Le Petit Prince (The Little Prince)", "Antoine de Saint-exupery", "French", "1943", "140 milion"],
+        ["Harry Potter and the Philosopher's Stone", "J. K. Rowling", "English", "1997", "107 milion"],
+        ["And Then There Were None", "Agatha Christie", "English", "1939", "100 milion"],
+        ["Dream of the Red Chamber", "Cao Xueqin", "Chinese", "1754-1791", "100 milion"]
+      ];
 
-  var Excel = React.crateClass({
-    render: function() {
-      return (
-        React.DOM.table(null,
-          React.DOM.thead(null,
-            React.DOM.tr(null,
-              this.props.headers.map(function(title) {
-                return React.DOM.th(null, title);
-              })
+      var Excel = React.crateClass({
+        render: function() {
+          return (
+            React.DOM.table(null,
+              React.DOM.thead(null,
+                React.DOM.tr(null,
+                  this.props.headers.map(function(title) {
+                    return React.DOM.th(null, title);
+                  })
+                )
+              )
             )
-          )
-        )
-      );
-    }
-  });
-</script>
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
