@@ -21,6 +21,12 @@
           };
         },
 
+        getInitialState: function() {
+          return {
+            text: this.props.text,
+          };
+        },
+
         _textChange: function(ev) {
           this.setState({
             text: ev.target.value,
