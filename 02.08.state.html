@@ -21,19 +21,21 @@
           };
         },
 
-        render: function() {
-          return React.DOM.div(null,
-            React.DOM.textarea({
-              defaultValue: this.props.text,
-            }),
-            React.DOM.h3(null, this.props.text.length)
-          );
-        }
         _textChange: function(ev) {
           this.setState({
             text: ev.target.value,
           });
-        ),
+        },
+
+        render: function() {
+          return React.DOM.div(null,
+            React.DOM.textarea({
+              value: this.state.text,
+              onChange: this._textChange, 
+            }),
+            React.DOM.h3(null, this.state.text.length)
+          );
+        }
       });
 
       ReactDOM.render(
