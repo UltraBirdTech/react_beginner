@@ -24,6 +24,11 @@
 
       var Excel = React.createClass({
         displayName: 'Excel',
+        
+        getInitialState: function() {
+          return { data: this.props.initialData };
+        },
+
         render: function() {
           return (
             React.DOM.table(null,
@@ -33,6 +38,17 @@
                     return React.DOM.th({ key: idx }, title);
                   })
                 )
+              ),
+              React.DOM.tbody(null,
+                this.state.data.map(function(row, idx) {
+                  return (
+                    React.DOM.tr({ key: idx },
+                      row.map(function(cell, idx) {
+                        return React.DOM.td({ key: idx }, cell);
+                      })
+                    )
+                  );
+                })
               )
             )
           );
@@ -42,7 +58,7 @@
       ReactDOM.render(
         React.createElement(Excel, {
           headers: headers,
-          initiaData: data,
+          initialData: data,
         }),
         document.getElementById("app")
       );
