@@ -54,6 +54,13 @@
 
         _save: function(e) {
           e.preventDefault();
+          var input = e.target.firstChild;
+          var data = this.state.data.slice();
+          data[this.state.edit.row][this.state.edit.cell] = input.value;
+          this.setState({
+            edit: null,
+            data: data,
+          })
         },
 
         _sort: function(e) {
@@ -93,13 +100,13 @@
                         var content = cell;
 
                         var edit = this.state.edit;
-                        if (edit $$ edit.row === rowidx && edit.cell === idx ) {
+                        if (edit && edit.row === rowidx && edit.cell === idx ) {
                           content = React.DOMform({ onSubmit: this._save},
                             React.DOM.input({
                               type: 'text',
                               defaultValue: content,
                             })
-                          ),
+                          );
                         }
                         return React.DOM.td({
                           key: idx,
