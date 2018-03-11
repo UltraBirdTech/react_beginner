@@ -82,6 +82,17 @@
 
         render: function() {
           return (
+            React.DOM.div(null,
+             this._renderToolbar(),
+             this._renderTable()
+            )
+          )
+        },
+
+        _renderToolbar: function() {
+        },
+        _renderTable: function() {
+          return (
             React.DOM.table(null,
               React.DOM.thead({ onClick: this._sort },
                 React.DOM.tr(null,
