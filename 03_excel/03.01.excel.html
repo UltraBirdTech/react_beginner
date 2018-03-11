@@ -40,7 +40,7 @@
           return { 
             data: this.props.initialData,
             sortby: null,
-            descending: false
+            descending: false,
             edit: null, 
           };
         },
@@ -50,6 +50,10 @@
             row: parseInt(e.target.dataset.row, 10),
             cell: e.target.cellIndex,
           }});
+        },
+
+        _save: function(e) {
+          e.preventDefault();
         },
 
         _sort: function(e) {
@@ -88,6 +92,15 @@
                       row.map(function(cell, idx) {
                         var content = cell;
 
+                        var edit = this.state.edit;
+                        if (edit $$ edit.row === rowidx && edit.cell === idx ) {
+                          content = React.DOMform({ onSubmit: this._save},
+                            React.DOM.input({
+                              type: 'text',
+                              defaultValue: content,
+                            })
+                          ),
+                        }
                         return React.DOM.td({
                           key: idx,
                           'data-row': rowidx
