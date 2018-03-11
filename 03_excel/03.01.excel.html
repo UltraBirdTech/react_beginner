@@ -44,6 +44,13 @@
           };
         },
 
+        _showEditor: function(e) {
+          this.setState({edit: {
+            row: parseInt(e.target.dataset.row, 10),
+            cell: e.target.cellIndex,
+          }});
+        },
+
         _sort: function(e) {
           var column = e.target.cellIndex;
           var data = this.state.data.slice()
