@@ -83,16 +83,23 @@
                   }, this)
                 )
               ),
-              React.DOM.tbody(null,
-                this.state.data.map(function(row, idx) {
+              React.DOM.tbody({ onDoubleClick: this._showEditor },
+                this.state.data.map(function(row, rowidx) {
                   return (
-                    React.DOM.tr({ key: idx },
+                    React.DOM.tr({ key: rowidx },
                       row.map(function(cell, idx) {
-                        return React.DOM.td({ key: idx }, cell);
-                      })
+                        var content = cell;
+
+                        return React.DOM.td({
+                          key: idx,
+                          'data-row': rowidx
+                        }, content);
+                      
+                       //  return React.DOM.td({ key: idx }, cell);
+                      }, this)
                     )
                   );
-                })
+                }, this)
               )
             )
           );
