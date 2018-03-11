@@ -101,7 +101,7 @@
 
                         var edit = this.state.edit;
                         if (edit && edit.row === rowidx && edit.cell === idx ) {
-                          content = React.DOMform({ onSubmit: this._save},
+                          content = React.DOM.form({ onSubmit: this._save},
                             React.DOM.input({
                               type: 'text',
                               defaultValue: content,
