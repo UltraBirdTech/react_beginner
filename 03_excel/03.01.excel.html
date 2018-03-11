@@ -47,7 +47,7 @@
         _sort: function(e) {
           var column = e.target.cellIndex;
           var data = this.state.data.slice()
-          var descending = this.state.sortby === column && !tihs.state.descending;
+          var descending = this.state.sortby === column && !this.state.descending;
           data.sort(function(a, b) {
             return descending 
             ? (a[column] < b[column] ? 1 : -1)
