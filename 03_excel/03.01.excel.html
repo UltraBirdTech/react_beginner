@@ -41,7 +41,7 @@
             data: this.props.initialData,
             sortby: null,
             descending: false
-            edit: null, // { row: 行番号, cell: 列番号 }
+            edit: null, 
           };
         },
 
@@ -78,8 +78,6 @@
                       title += this.state.descending ? ' \u2191' : ' \u2193'
                     } 
                     return React.DOM.th({ key: idx }, title);
-                    
-                   // return React.DOM.th({ key: idx }, title);
                   }, this)
                 )
               ),
@@ -94,8 +92,6 @@
                           key: idx,
                           'data-row': rowidx
                         }, content);
-                      
-                       //  return React.DOM.td({ key: idx }, cell);
                       }, this)
                     )
                   );
