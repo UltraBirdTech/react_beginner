@@ -159,19 +159,12 @@
         },
 
         _renderToolbar: function() {
-          return React.DOM.div({ className: 'toolbar'},
-            React.DOM.button({
-              onClick: this._toggleSearch,
-              className: 'toolbar',
-            },'検索'),
-            React.DOM.a({
-              onClick: this._download.bind(this, 'json'),
-              href: 'data.json'
-            }, 'JSON で保存'),
-            React.DOM.a({
-              onClick: this._download.bind(this, 'csv'),
-              href: 'data.csv'
-            }, 'CSV で保存')
+          return(
+            <div className="toolbar">
+              <button onClick={this._toggleSearch}>Search</button>
+              <a onClick={this._download.bind(this, 'json')} href="data.json">Export JSON</a>
+              <a onClick={this._download.bind(this, 'csv')} href="data.csv">Export CSV</a>
+            </div>
           );
         },
         _renderTable: function() {
