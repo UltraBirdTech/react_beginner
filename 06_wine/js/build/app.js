@@ -18,13 +18,14 @@ var _Excel2 = _interopRequireDefault(_Excel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headers = localStorate.getItem('headers');
-var data = localStorate.getItem('data');
+var headers = localStorage.getItem('headers');
+var data = localStorage.getItem('data');
 
 if (!headers) {
   headers = ['タイトル', '年', '評価', 'コメント'];
   data = [['テスト', '2015', '3', 'hoge']];
 }
+console.log(haders);
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
