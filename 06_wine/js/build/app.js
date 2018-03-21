@@ -1,5 +1,13 @@
 'use strict';
 
+var _Excel = require('./components/Excel');
+
+var _Excel2 = _interopRequireDefault(_Excel);
+
+var _Logo = require('./components/Logo');
+
+var _Logo2 = _interopRequireDefault(_Logo);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -7,14 +15,6 @@ var _react2 = _interopRequireDefault(_react);
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Logo = require('./components/Logo');
-
-var _Logo2 = _interopRequireDefault(_Logo);
-
-var _Excel = require('./components/Excel');
-
-var _Excel2 = _interopRequireDefault(_Excel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25,7 +25,6 @@ if (!headers) {
   headers = ['タイトル', '年', '評価', 'コメント'];
   data = [['テスト', '2015', '3', 'hoge']];
 }
-console.log(haders);
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
@@ -36,4 +35,4 @@ _reactDom2.default.render(_react2.default.createElement(
     ' Whinpad\u306B\u3088\u3046\u3053\u305D\uFF01'
   ),
   _react2.default.createElement(_Excel2.default, { headers: headers, initialData: data })
-), document.getElementById('app'));
+), document.getElementById('pad'));

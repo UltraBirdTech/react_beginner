@@ -1,26 +1,16 @@
-var headers = [
-  "タイトル", "著者", "言語", "出版年", "売り上げ部数"
-];
-
-var data = [
-  ["The Load of the Rings", "J. R. R. Tolkien", "English", "1954-1955", "150 milion"],
-  ["Le Petit Prince (The Little Prince)", "Antoine de Saint-exupery", "French", "1943", "140 milion"],
-  ["Harry Potter and the Philosopher's Stone", "J. K. Rowling", "English", "1997", "107 milion"],
-  ["And Then There Were None", "Agatha Christie", "English", "1939", "100 milion"],
-  ["Dream of the Red Chamber", "Cao Xueqin", "Chinese", "1754-1791", "100 milion"]
-];
-
 import React from 'react';
+import PropTypes from 'prop-types'
+var createReactClass = require('create-react-class');
 
-var Excel = React.createClass({
+var Excel = createReactClass({
   displayName: 'Excel',
   propTypes: {
-    headers: React.PropTypes.arrayOf(
-      React.PropTypes.string
+    headers: PropTypes.arrayOf(
+      PropTypes.string
     ),
-    initialData: React.PropTypes.arrayOf(
-      React.PropTypes.arrayOf(
-        React.PropTypes.string
+    initialData: PropTypes.arrayOf(
+      PropTypes.arrayOf(
+        PropTypes.string
       )
     ),
   },
@@ -190,11 +180,3 @@ var Excel = React.createClass({
 });
 
 export default Excel
-
-ReactDOM.render(
-  React.createElement(Excel, {
-    headers: headers,
-    initialData: data,
-  }),
-  document.getElementById("app")
-);

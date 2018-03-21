@@ -1,24 +1,26 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headers = ["タイトル", "著者", "言語", "出版年", "売り上げ部数"];
+var createReactClass = require('create-react-class');
 
-var data = [["The Load of the Rings", "J. R. R. Tolkien", "English", "1954-1955", "150 milion"], ["Le Petit Prince (The Little Prince)", "Antoine de Saint-exupery", "French", "1943", "140 milion"], ["Harry Potter and the Philosopher's Stone", "J. K. Rowling", "English", "1997", "107 milion"], ["And Then There Were None", "Agatha Christie", "English", "1939", "100 milion"], ["Dream of the Red Chamber", "Cao Xueqin", "Chinese", "1754-1791", "100 milion"]];
-
-var Excel = _react2.default.createClass({
+var Excel = createReactClass({
   displayName: 'Excel',
   propTypes: {
-    headers: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    initialData: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string))
+    headers: _propTypes2.default.arrayOf(_propTypes2.default.string),
+    initialData: _propTypes2.default.arrayOf(_propTypes2.default.arrayOf(_propTypes2.default.string))
   },
 
   getInitialState: function getInitialState() {
@@ -54,13 +56,13 @@ var Excel = _react2.default.createClass({
       return null;
     }
     return _react2.default.createElement(
-      "tr",
+      'tr',
       { onChange: this._search },
       this.props.headers.map(function (_ignore, idx) {
         return _react2.default.createElement(
-          "td",
+          'td',
           { key: idx },
-          _react2.default.createElement("input", { type: "text", "data-idx": idx })
+          _react2.default.createElement('input', { type: 'text', 'data-idx': idx })
         );
       })
     );
@@ -124,8 +126,8 @@ var Excel = _react2.default.createClass({
 
   render: function render() {
     return _react2.default.createElement(
-      "div",
-      { className: "Excel" },
+      'div',
+      { className: 'Excel' },
       this._renderToolbar(),
       this._renderTable()
     );
@@ -133,41 +135,41 @@ var Excel = _react2.default.createClass({
 
   _renderToolbar: function _renderToolbar() {
     return _react2.default.createElement(
-      "div",
-      { className: "toolbar" },
+      'div',
+      { className: 'toolbar' },
       _react2.default.createElement(
-        "button",
+        'button',
         { onClick: this._toggleSearch },
-        "Search"
+        'Search'
       ),
       _react2.default.createElement(
-        "a",
-        { onClick: this._download.bind(this, 'json'), href: "data.json" },
-        "Export JSON"
+        'a',
+        { onClick: this._download.bind(this, 'json'), href: 'data.json' },
+        'Export JSON'
       ),
       _react2.default.createElement(
-        "a",
-        { onClick: this._download.bind(this, 'csv'), href: "data.csv" },
-        "Export CSV"
+        'a',
+        { onClick: this._download.bind(this, 'csv'), href: 'data.csv' },
+        'Export CSV'
       )
     );
   },
   _renderTable: function _renderTable() {
     return _react2.default.createElement(
-      "table",
+      'table',
       null,
       _react2.default.createElement(
-        "thead",
+        'thead',
         { onClick: this._sort },
         _react2.default.createElement(
-          "tr",
+          'tr',
           null,
           this.props.headers.map(function (title, idx) {
             if (this.state.sortby === idx) {
-              title += this.state.descending ? " \u2191" : " \u2193";
+              title += this.state.descending ? ' \u2191' : ' \u2193';
             }
             return _react2.default.createElement(
-              "th",
+              'th',
               { key: idx },
               title
             );
@@ -175,26 +177,26 @@ var Excel = _react2.default.createClass({
         )
       ),
       _react2.default.createElement(
-        "tbody",
+        'tbody',
         { onDoubleClick: this._showEditor },
         this._renderSearch(),
         this.state.data.map(function (row, rowidx) {
           return _react2.default.createElement(
-            "tr",
+            'tr',
             { key: rowidx },
             row.map(function (cell, idx) {
               var content = cell;
               var edit = this.state.edit;
               if (edit && edit.row === rowidx && edit.cell === idx) {
                 content = _react2.default.createElement(
-                  "form",
+                  'form',
                   { onSubmit: this._save },
-                  _react2.default.createElement("input", { type: "text", defaultValue: cell })
+                  _react2.default.createElement('input', { type: 'text', defaultValue: cell })
                 );
               }
               return _react2.default.createElement(
-                "td",
-                { key: idx, "data-row": rowidx },
+                'td',
+                { key: idx, 'data-row': rowidx },
                 content
               );
             }, this)
@@ -206,9 +208,3 @@ var Excel = _react2.default.createClass({
 });
 
 exports.default = Excel;
-
-
-ReactDOM.render(_react2.default.createElement(Excel, {
-  headers: headers,
-  initialData: data
-}), document.getElementById("app"));
