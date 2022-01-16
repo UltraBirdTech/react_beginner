@@ -160,15 +160,17 @@
           return React.DOM.div({ className: 'toolbar'},
             React.DOM.button({
               onClick: this._toggleSearch,
-              className: 'toolbar',
+              className: 'toolbar, button',
             },'検索'),
             React.DOM.a({
               onClick: this._download.bind(this, 'json'),
-              href: 'data.json'
+              href: 'data.json',
+              className: 'button'
             }, 'JSON で保存'),
             React.DOM.a({
               onClick: this._download.bind(this, 'csv'),
-              href: 'data.csv'
+              href: 'data.csv',
+              className: 'button'
             }, 'CSV で保存')
           );
         },
