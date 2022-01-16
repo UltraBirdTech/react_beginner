@@ -5,13 +5,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-    <div stype {{padding: '20px'}}>
+    <div stype={{padding: '20px'}}>
         <h1> コンポーネント一覧 </h1>
         <h2> Logo </h2>
         <div style={{ display: 'inline-block', background: 'purple'}}>
             <Logo />
         </div>
         // somthing write...
-    </div>
+    </div>,
     document.getElementById('pad')
 );
