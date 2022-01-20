@@ -1,5 +1,9 @@
 'use strict';
 
+var _Button = require('./components/Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
 var _Logo = require('./components/Logo');
 
 var _Logo2 = _interopRequireDefault(_Logo);
@@ -31,6 +35,43 @@ _reactDom2.default.render(_react2.default.createElement(
         'div',
         { style: { display: 'inline-block', background: 'purple' } },
         _react2.default.createElement(_Logo2.default, null)
+    ),
+    _react2.default.createElement(
+        'h2',
+        null,
+        'Button'
+    ),
+    _react2.default.createElement(
+        'div',
+        null,
+        'onClick\u304C\u6307\u5B9A\u3055\u308C\u305FButton:',
+        _react2.default.createElement(
+            _Button2.default,
+            { onClick: function onClick() {
+                    return alert('Click');
+                } },
+            'Click'
+        )
+    ),
+    _react2.default.createElement(
+        'div',
+        null,
+        'href\u304C\u6307\u5B9A\u3055\u308C\u305FButton:',
+        _react2.default.createElement(
+            _Button2.default,
+            { href: 'http://reactjs.com' },
+            'Follow'
+        )
+    ),
+    _react2.default.createElement(
+        'div',
+        null,
+        '\u30AF\u30E9\u30B9\u540D\u304C\u6307\u5B9A\u3055\u308C\u305FButton:',
+        _react2.default.createElement(
+            _Button2.default,
+            { className: 'custom' },
+            'Nothing'
+        )
     ),
     '// somthing write...'
 ), document.getElementById('pad'));
