@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+    </div>
+    <script src="react/react-15.4.1/build/react.js"></script>
+    <script src="react/react-15.4.1/build/react-dom.js"></script>
+    <script>
+      var TextAreaCounter = React.createClass({
+        propTypes: {
+          text: React.PropTypes.string,
+        },
+
+        getDefaultProps: function() {
+          return {
+            text: '',
+          };
+        },
+
+        getInitialState: function() {
+          return {
+            text: this.props.text,
+          };
+        },
+
+        _textChange: function(ev) {
+          this.setState({
+            text: ev.target.value,
+          });
+        },
+
+        _log: function(methodName, args) {
+          console.log(methodName, args);
+        },
+
+        componentWillUpdate: function() {
+          this._log('componentWillUpdate', arguments);
+        },
+        componentDidUpdate: function() {
+          this._log('componentWillUpdate', arguments);
+        },
+        componentWillMount: function() {
+          this._log('componentWillUpdate', arguments);
+        },
+        
+        componentDidMount: function() {
+          this._log('componentWillUpdate', arguments);
+        },
+          
+        componentWillUnmount: function() {
+          this._log('componentWillUpdate', arguments);
+        },
+        
+
+
+        render: function() {
+          return React.DOM.div(null,
+            React.DOM.textarea({
+              value: this.state.text,
+              onChange: this._textChange, 
+            }),
+            React.DOM.h3(null, this.state.text.length)
+          );
+        }
+      });
+
+      ReactDOM.render(
+        React.createElement(TextAreaCounter, {
+          text: "ボブ",
+        }),
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
