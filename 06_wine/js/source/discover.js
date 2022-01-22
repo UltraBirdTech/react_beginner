@@ -17,6 +17,8 @@ ReactDOM.render(
             <div>hrefが指定されたButton:<Button href="http://reactjs.com">Follow</Button></div>
             <div>クラス名が指定されたButton:<Button className="custom">Nothing</Button></div>
         // somthing write...
+        <h2>Suggest</h2>
+            <div><Suggest options={['eenie', 'meenie', 'miney', 'mo']} /></div>
     </div>,
     document.getElementById('pad')
 );
