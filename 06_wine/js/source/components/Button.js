@@ -9,7 +9,7 @@ function Button(props) {
 }
 
 Button.propTypes = {
-    href: PropTypes.string,
+//    href: PropTypes.string,
 };
 
 export default Button
