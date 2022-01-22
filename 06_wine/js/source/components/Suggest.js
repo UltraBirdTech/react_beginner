@@ -24,7 +24,7 @@ class Suggest extends Component {
     }
 }
 
-Suggets.propTypes = {
+Sugget.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string),
 }
 
