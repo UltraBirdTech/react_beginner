@@ -73,5 +73,15 @@ _reactDom2.default.render(_react2.default.createElement(
             'Nothing'
         )
     ),
-    '// somthing write...'
+    '// somthing write...',
+    _react2.default.createElement(
+        'h2',
+        null,
+        'Suggest'
+    ),
+    _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(Suggest, { options: ['eenie', 'meenie', 'miney', 'mo'] })
+    )
 ), document.getElementById('pad'));
